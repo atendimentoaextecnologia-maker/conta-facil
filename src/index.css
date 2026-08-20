@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* A&X Conta Fácil Design System 
+   Cores baseadas na logo: azul escuro (#1a365d) e azul claro (#0891b2)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 215 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 50% 15%;
+
+    --primary: 215 70% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 82% 37%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 190 82% 37%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 70% 23%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 215 70% 23%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 190 82% 37%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 60% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 215 60% 30%;
+    --sidebar-ring: 190 82% 37%;
+
+    /* Custom tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(215, 70%, 23%) 0%, hsl(190, 82%, 37%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(215 70% 23% / 0.1);
+    --shadow-elevated: 0 8px 32px -8px hsl(215 70% 23% / 0.15);
+
+    /* Landing / marca (superfície escura) */
+    --ink: 215 55% 7%;
+    --ink-soft: 215 45% 11%;
+    --ink-foreground: 210 30% 96%;
+    --ink-muted: 210 20% 72%;
+    --brand: 190 90% 50%;
+    --brand-2: 265 85% 66%;
+    --gradient-brand: linear-gradient(100deg, hsl(var(--brand)) 0%, hsl(200 90% 60%) 45%, hsl(var(--brand-2)) 100%);
+    --gradient-ink: radial-gradient(60% 80% at 50% 0%, hsl(200 80% 22% / 0.45) 0%, transparent 70%);
+    --shadow-glow: 0 0 60px -12px hsl(var(--brand) / 0.45);
+  }
+
+  .dark {
+    --background: 215 50% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 50% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 50% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 190 82% 50%;
+    --primary-foreground: 215 50% 8%;
+
+    --secondary: 215 70% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 40% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 190 82% 50%;
+    --accent-foreground: 215 50% 8%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 215 40% 22%;
+    --input: 215 40% 22%;
+    --ring: 190 82% 50%;
+
+    --sidebar-background: 215 50% 10%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 190 82% 50%;
+    --sidebar-primary-foreground: 215 50% 8%;
+    --sidebar-accent: 215 50% 15%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 215 40% 22%;
+    --sidebar-ring: 190 82% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .text-gradient-brand {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-brand {
+    background: var(--gradient-brand);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--ink-foreground) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--ink-foreground) / 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 100%);
+    mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 100%);
+  }
+
+  .glass {
+    background: hsl(var(--ink-foreground) / 0.04);
+    border: 1px solid hsl(var(--ink-foreground) / 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
